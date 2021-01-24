@@ -1,3 +1,23 @@
+# General Info
+
+Project created using [Create React App](https://create-react-app.dev/). This project uses React with Redux. It also uses [reactstrap](https://reactstrap.github.io/) for styling.
+
+# Initial Setup
+
+## Installation & Setup
+
+1. Clone repo
+2. Install [yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
+3. Install dependencies by running `yarn install`
+
+### Specific Dependencies
+
+```
+yarn add bootstrap@4.5.2
+yarn add react-popper@1.3.6
+yarn add reactstrap@8.5.1
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
