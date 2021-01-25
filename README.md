@@ -1,6 +1,6 @@
 # General Info
 
-Project created using [Create React App](https://create-react-app.dev/). This project uses React with Redux. It also uses [reactstrap](https://reactstrap.github.io/) for styling.
+Project created using [Create React App](https://create-react-app.dev/). This project uses React (v17.0.1) with Redux. It also uses [reactstrap](https://reactstrap.github.io/) for styling.
 
 # Initial Setup
 
