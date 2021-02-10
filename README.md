@@ -10,12 +10,14 @@ Project created using [Create React App](https://create-react-app.dev/). This pr
 2. Install [yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 3. Install dependencies by running `yarn install`
 
-### Specific Dependencies
+### Specific Dependencies Added
 
 ```
 yarn add bootstrap@4.5.2
 yarn add react-popper@1.3.6
 yarn add reactstrap@8.5.1
+yarn add redux@4.0.5
+yarn add react-redux@7.2.0
 ```
 
 # Getting Started with Create React App
