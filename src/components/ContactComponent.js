@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { Control, LocalForm } from 'react-redux-form'
+import { Control, LocalForm, Errors } from 'react-redux-form'
+
+const required = (val) => val && val.length
+const maxLength = (len) => (val) => !val || val.length <= len
+const minLength = (len) => (val) => val && val.length >= len
+const isNumber = (val) => !isNaN(+val)
+const validEmail = (val) =>
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
 
 class Contact extends Component {
   constructor(props) {
@@ -94,6 +101,22 @@ class Contact extends Component {
                     name="firstName"
                     className="form-control"
                     placeholder="First Name"
+                    validators={{
+                      required,
+                      minLength: minLength(2),
+                      maxLength: maxLength(15),
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".firstName"
+                    show="touched"
+                    component="div"
+                    messages={{
+                      required: 'Required',
+                      minLength: 'Must be at least 2 characters',
+                      maxLength: 'Must be 15 characters or les',
+                    }}
                   />
                 </Col>
               </Row>
@@ -108,6 +131,22 @@ class Contact extends Component {
                     name="lastName"
                     className="form-control"
                     placeholder="Last Name"
+                    validators={{
+                      required,
+                      minLength: minLength(2),
+                      maxLength: maxLength(15),
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".lastName"
+                    show="touched"
+                    component="div"
+                    messages={{
+                      required: 'Required',
+                      minLength: 'Must be at least 2 characters',
+                      maxLength: 'Must be 15 characters or less',
+                    }}
                   />
                 </Col>
               </Row>
@@ -122,6 +161,24 @@ class Contact extends Component {
                     name="phoneNum"
                     className="form-control"
                     placeholder="Phone number"
+                    validators={{
+                      required,
+                      minLength: minLength(10),
+                      maxLength: maxLength(15),
+                      isNumber,
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".phoneNum"
+                    show="touched"
+                    component="div"
+                    messages={{
+                      required: 'Required',
+                      minLength: 'Must be at least 10 number',
+                      maxLength: 'Must be 15 numbers or less',
+                      isNumber: 'Must contain only digits',
+                    }}
                   />
                 </Col>
               </Row>
@@ -136,6 +193,21 @@ class Contact extends Component {
                     name="email"
                     className="form-control"
                     placeholder="Email"
+                    validators={{
+                      required,
+                      validEmail,
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".email"
+                    show="touched"
+                    component="div"
+                    messages={{
+                      required: 'Required',
+                      validEmail:
+                        'Must be a valid email address containing "@" and ending in a valid domain.',
+                    }}
                   />
                 </Col>
               </Row>
