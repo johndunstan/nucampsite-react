@@ -18,6 +18,7 @@ yarn add react-popper@1.3.6
 yarn add reactstrap@8.5.1
 yarn add redux@4.0.5
 yarn add react-redux@7.2.0
+yarn add react-redux-form@1.16.14
 ```
 
 # Getting Started with Create React App
