@@ -11,6 +11,8 @@ import Footer from './FooterComponent'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import { addComment } from '../redux/ActionCreators'
+
 const mapStateToProps = (state) => {
   return {
     campsites: state.campsites,
@@ -18,6 +20,11 @@ const mapStateToProps = (state) => {
     partners: state.partners,
     promotions: state.promotions,
   }
+}
+
+const mapDisptachToProps = {
+  addComment: (campsiteId, rating, author, text) =>
+    addComment(campsiteId, rating, author, text),
 }
 
 class Main extends Component {
@@ -47,6 +54,7 @@ class Main extends Component {
           comments={this.props.comments.filter(
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}
+          addComment={this.props.addComment}
         />
       )
     }
@@ -76,4 +84,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main))
+export default withRouter(connect(mapStateToProps, mapDisptachToProps)(Main))
