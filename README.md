@@ -22,6 +22,8 @@ yarn add react-redux-form@1.16.14
 yarn add redux-thunk@2.3.0
 yarn add redux-logger@3.0.6
 yarn add react-transition-group@4.4.1
+yarn add react-animation-components@3.0.0
+yarn add prop-types@15.7.2
 ```
 
 # Getting Started with Create React App
