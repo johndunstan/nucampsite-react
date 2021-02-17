@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { actions } from 'react-redux-form'
 
 import {
-  addComment,
+  postComment,
   fetchCampsites,
   fetchComments,
   fetchPromotions,
@@ -29,8 +29,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDisptachToProps = {
-  addComment: (campsiteId, rating, author, text) =>
-    addComment(campsiteId, rating, author, text),
+  postComment: (campsiteId, rating, author, text) =>
+    postComment(campsiteId, rating, author, text),
   fetchCampsites: () => fetchCampsites(),
   resetFeedbackForm: () => actions.reset('feedbackForm'),
   fetchComments: () => fetchComments(),
@@ -81,7 +81,7 @@ class Main extends Component {
             (comment) => comment.campsiteId === +match.params.campsiteId
           )}
           commentsErrMess={this.props.comments.errMess}
-          addComment={this.props.addComment}
+          postComment={this.props.postComment}
         />
       )
     }
