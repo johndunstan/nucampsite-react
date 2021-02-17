@@ -21,6 +21,7 @@ yarn add react-redux@7.2.0
 yarn add react-redux-form@1.16.14
 yarn add redux-thunk@2.3.0
 yarn add redux-logger@3.0.6
+yarn add react-transition-group@4.4.1
 ```
 
 # Getting Started with Create React App
