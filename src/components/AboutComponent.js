@@ -135,8 +135,6 @@ function About(props) {
           <h3>Community Partners</h3>
         </div>
 
-        {/* Replace below div with component from above */}
-
         <PartnerList partners={props.partners} />
       </div>
     </div>
